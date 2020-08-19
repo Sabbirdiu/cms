@@ -20,3 +20,12 @@ class Product(models.Model):
     category  = models.CharField(max_length=200,choices=CATEGORY,null=True)
     description = models.CharField(max_length=150, null=True)
     date_created = models.DateTimeField(auto_now_add=True, null = True)
+class Order(models.Model):
+    STATUS = (
+        ('Pending','Pending'),
+        ('Out for Delivery','Out for Delivery'),
+        ('Delivered','Delivered')
+    )
+
+    date_created = models.DateTimeField(auto_now_add=True, null = True)
+    status = models.CharField(max_length=200,choices=STATUS,null=True)
