@@ -29,3 +29,8 @@ class Order(models.Model):
 
     date_created = models.DateTimeField(auto_now_add=True, null = True)
     status = models.CharField(max_length=200,choices=STATUS,null=True)
+
+class Tag(models.Model):
+    name = models.CharField(max_length=150, null=True)
+    def __str__(self):
+        return self.name
