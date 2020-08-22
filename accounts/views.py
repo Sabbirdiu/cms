@@ -26,13 +26,16 @@ def products(request):
 
 def customer(request,pk_test):
     customer = Customer.objects.get(id=pk_test)
-    orders = customer.objects.all()
+    orders = Customer.objects.all()
     order_count = orders.count()
+    order = Order.objects.all()
     
     context={
         'customer':customer,
         'orders':orders,
-        'order_count':order_count
+        'order_count':order_count,
+        'order':order,
+        
     }
 
 
